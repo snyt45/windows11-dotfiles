@@ -1,18 +1,29 @@
 # セットアップ手順
 
-## 1. セットアップ用スクリプトを実行
-`winget install Git.Git`でgitをインストールしてgit cloneします。
+## 1. Git
 
-※注意：ディレクトリ名は「.dotfiles」である必要があります。
+Download
+```
+winget install Git.Git
+```
+
+Setting
+```
+git config --global user.name "global"
+git config --global user.email "global@example.com"
+```
+
+## 2. Clone
+
 ```
 git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 ```
-
-`setup.ps1`を右クリックして「PowerShellで実行」を押して、Windowsの設定やソフトウェアインストールを実行します。
+## 3. Setup
+`setup.ps1`を右クリックして「PowerShellで実行」
 
 実行後はセットアップを完了させるために必ず**PCを再起動**してください。
 
-## 2. Windowsの設定を行う
+## 4. Windowsの設定を行う
 
 <details>
 <summary>基本設定の詳細はこちら</summary>
@@ -37,7 +48,7 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 
 </details>
 
-## 3. ソフトウェアの設定を行う
+## 5. ソフトウェアの設定を行う
 
 <details>
 <summary>通常系のソフトウェアの詳細はこちら</summary>
@@ -100,7 +111,7 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 
 </details>
 
-## 4. WSL2のセットアップを行う
+## 6. WSL2のセットアップを行う
 
 <details>
 <summary>WSL2のセットアップの詳細はこちら</summary>
@@ -108,7 +119,12 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 - Windows PowerShellを管理者権限で開く。
 - `wsl --install -d Ubuntu-20.04`を実行する
   - エラーが出る場合は`wsl --update`を実行する
-- Ubuntuの初期設定を行う。
+- `wsl --unregister Ubuntu-20.04` & Ubuntu-20.04をアンインストール
+- Ubuntu-22.04をMicrosoft Storeからインストール
+  - インストール後、開くとセットアップ後にモーダルが表示される。最初文字化けしているのでちょっと待ち初期設定を行う。
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FDu4ipUQcv7.png?alt=media&token=dcb01af7-4c41-4caf-8f87-623cb91ddef3)
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2F-19KDsH-zZ.png?alt=media&token=4a134ada-a8cf-4169-93fa-9ede3a80f02d)
+  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FnrKusEG26V.png?alt=media&token=25b7b279-8288-454e-bb48-8b4333d2b60c)
 - Docker Desktopの設定を行う。
   - 設定 > Resources > WSL INTEGRATION > Ubuntuをオン > Apply & Restart
   - WSLで`docker -v`が使えることを確認
@@ -130,12 +146,12 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
         - SauceCodePro Nerd Font
       - フォントサイズ
         - 11
-  - プロファイル： Ubuntu-20.04
+  - プロファイル： Ubuntu-22.04
     - 全般
       - 名前
         - 「snyt45」に設定
       - 開始ディレクトリ
-        - `\\wsl.localhost\Ubuntu-20.04\home\snyt45`に設定
+        - `\\wsl.localhost\Ubuntu-22.04\home\snyt45`に設定
       - タブタイトル名
         - 「snyt45」に設定
     - 詳細設定
@@ -154,7 +170,6 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
       2. Windows Terminal > 設定 > JSONファイルを開く > shemesに追加する
         - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FSjYZvSjZLB.png?alt=media&token=107c48b8-f3e6-402c-9281-869a81882e6d)
       3. プロファイル > 規定値 > 外観 > 配色を「Gruvbox Dark」に変更する
-
 
 - 以降のセットアップは https://github.com/snyt45/dockerfiles に従って進行する。
 
