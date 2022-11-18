@@ -31,10 +31,11 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 ### 壁紙
 - `Win + I`で設定を開く > 個人用設定 > テーマ > ダークテーマ
 
-### Microsoft IME
-- 右下のIMEアイコンを右クリック > 設定 > 全般
-  - スペース
-    - 常に半角
+### Google 日本語入力
+- サイトからダウンロードすること ※winget経由だとデフォルト設定ができない
+- 右下のIMEアイコンを右クリック > プロパティ > 一般
+  - スペースの入力
+    - 半角
 
 </details>
 
