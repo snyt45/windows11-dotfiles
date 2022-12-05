@@ -52,6 +52,7 @@ winget install Dropbox.Dropbox
 winget install SlackTechnologies.Slack
 winget install Zoom.Zoom
 winget install TheDocumentFoundation.LibreOffice
+winget install Microsoft.PCManager
 
 echo "ソフトウェアのインストールが完了しました。"
 
