@@ -154,8 +154,6 @@ git clone https://github.com/snyt45/windows11-dotfiles.git $HOME/.dotfiles
           - SauceCodePro Nerd Font
         - フォントサイズ
           - 11
-      - 透明度
-        - 背景の不透明度を「85%」に設定
   - プロファイル： Ubuntu-22.04
     - 全般
       - 名前
