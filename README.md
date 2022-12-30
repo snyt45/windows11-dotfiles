@@ -1,3 +1,13 @@
+# リストア（初期化）手順
+
+**※初期化時、念のため外付けSDD等は外しておく。**
+
+1. `Win + I`で設定を開く > システム > 回復 > このPCをリセット
+2. すべて削除する
+3. ローカル再インストール
+4. 次へ
+5. リセット
+
 # セットアップ手順
 
 ## 1. Git
@@ -16,8 +26,9 @@ git config --global user.email "global@example.com"
 ## 2. Clone
 
 ```
-git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
+git clone https://github.com/snyt45/windows11-dotfiles.git
 ```
+
 ## 3. Setup
 `setup.ps1`を右クリックして「PowerShellで実行」
 
@@ -56,12 +67,12 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 
 ### Google Chrome
 - 規定のアプリに設定
-- アプリとしてインストール
-  - Twitter
-  - Roam Research
-  - YouTube Music
-- ショートカットとして追加（ウィンドウとして開くにチェック）
-  - TaskChute Cloud
+- 各アカウントでサインイン
+- ノートPCのみ
+  - アプリとしてインストール
+    - Roam Research
+  - ショートカットとして追加（ウィンドウとして開くにチェック）
+    - TaskChute Cloud
 
 ### PowerToys
 - FancyZones
@@ -82,9 +93,9 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 ### Snipaste
 - 環境設定 > コントロール > グローバルショートカット
   - 「カスタム切り取り」のショートカットを削除
-  - 「カスタム切り取り」のショートカットを`Shift + F1`に設定
+  - 「切り取り」のショートカットを`Shift + F1`に設定
 
-### Slack、Discord
+### Slack
 - 各アカウントでサインイン
 
 </details>
@@ -112,20 +123,15 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
 
 </details>
 
-## 6. WSL2のセットアップを行う
+## 6. WSL2の準備、Windows Terminalの設定を行う
 
 <details>
 <summary>WSL2のセットアップの詳細はこちら</summary>
 
 - Windows PowerShellを管理者権限で開く。
-- `wsl --install -d Ubuntu-20.04`を実行する
-  - エラーが出る場合は`wsl --update`を実行する
-- `wsl --unregister Ubuntu-20.04` & Ubuntu-20.04をアンインストール
+- `wsl --update`を実行する
+- `wsl --install -d Ubuntu-20.04`を実行する。 `wsl --unregister Ubuntu-20.04` & Ubuntu-20.04をアンインストール
 - Ubuntu-22.04をMicrosoft Storeからインストール
-  - インストール後、開くとセットアップ後にモーダルが表示される。最初文字化けしているのでちょっと待ち初期設定を行う。
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FDu4ipUQcv7.png?alt=media&token=dcb01af7-4c41-4caf-8f87-623cb91ddef3)
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2F-19KDsH-zZ.png?alt=media&token=4a134ada-a8cf-4169-93fa-9ede3a80f02d)
-  - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FnrKusEG26V.png?alt=media&token=25b7b279-8288-454e-bb48-8b4333d2b60c)
 - Docker Desktopの設定を行う。
   - 設定 > Resources > WSL INTEGRATION > Ubuntuをオン > Apply & Restart
   - WSLで`docker -v`が使えることを確認
@@ -143,10 +149,13 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
     - 貼り付けの`Ctrl + V`を削除する ※Vimのキーバインドと被るため
   - プロファイル：規定値
     - 外観
-      - フォントフェイス
-        - SauceCodePro Nerd Font
-      - フォントサイズ
-        - 11
+      - テキスト
+        - フォントフェイス
+          - SauceCodePro Nerd Font
+        - フォントサイズ
+          - 11
+      - 透明度
+        - 背景の不透明度を「85%」に設定
   - プロファイル： Ubuntu-22.04
     - 全般
       - 名前
@@ -155,6 +164,8 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
         - `\\wsl.localhost\Ubuntu-22.04\home\snyt45`に設定
       - タブタイトル名
         - 「snyt45」に設定
+      - 外観
+        - カーソルの形を「バー」に設定
     - 詳細設定
       - ベル通知スタイル
         - 音によるチャイム オフ
@@ -172,16 +183,8 @@ git clone https://github.com/snyt45/windows11-dotfiles.git ~/.dotfiles
         - ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fyuta_sano%2FSjYZvSjZLB.png?alt=media&token=107c48b8-f3e6-402c-9281-869a81882e6d)
       3. プロファイル > 規定値 > 外観 > 配色を「Gruvbox Dark」に変更する
 
-- 以降のセットアップは https://github.com/snyt45/dockerfiles に従って進行する。
-
 </details>
 
-# リストア（初期化）手順
+## 7. WSL2のセットアップ
 
-**※初期化時、念のため外付けSDD等は外しておく。**
-
-1. `Win + I`で設定を開く > システム > 回復 > このPCをリセット
-2. すべて削除する
-3. ローカル再インストール
-4. 次へ
-5. リセット
+以降のセットアップは https://github.com/snyt45/dockerfiles に従って進行する。
