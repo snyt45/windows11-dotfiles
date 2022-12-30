@@ -26,7 +26,7 @@ git config --global user.email "global@example.com"
 ## 2. Clone
 
 ```
-git clone https://github.com/snyt45/windows11-dotfiles.git
+git clone https://github.com/snyt45/windows11-dotfiles.git $HOME/.dotfiles
 ```
 
 ## 3. Setup
