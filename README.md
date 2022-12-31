@@ -7,6 +7,7 @@
 3. ローカル再インストール
 4. 次へ
 5. リセット
+6. リセット後は、 `Win + I`で設定を開く > Windows Updateで更新があれば更新してPCを再起動する
 
 # セットアップ手順
 
@@ -47,6 +48,10 @@ git clone https://github.com/snyt45/windows11-dotfiles.git $HOME/.dotfiles
 - 右下のIMEアイコンを右クリック > プロパティ > 一般
   - スペースの入力
     - 半角
+
+### セキュリティソフト
+- マカフィーリブセーフはWindowsのアプリからアンインストールする
+- 任意のセキュリティソフトをインストールする
 
 </details>
 
@@ -130,8 +135,8 @@ git clone https://github.com/snyt45/windows11-dotfiles.git $HOME/.dotfiles
 
 - Windows PowerShellを管理者権限で開く。
 - `wsl --update`を実行する
-- `wsl --install -d Ubuntu-20.04`を実行する。 `wsl --unregister Ubuntu-20.04` & Ubuntu-20.04をアンインストール
-- Ubuntu-22.04をMicrosoft Storeからインストール
+- `Ubuntu 22.04.1 LTS`をMicrosoft Storeからインストール
+  - 「開く」を押下して、usernameとpasswordを入力する
 - Docker Desktopの設定を行う。
   - 設定 > Resources > WSL INTEGRATION > Ubuntuをオン > Apply & Restart
   - WSLで`docker -v`が使えることを確認
